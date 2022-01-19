@@ -10,9 +10,9 @@
     "color_cart_dot": "#ff4f33",
     "color_small_image_bg": "#ffffff",
     "color_large_image_bg": "#0f0f0f",
-    "color_header": "#ffffff",
-    "color_header_text": "#000000",
-    "color_announcement": "#0f0f0f",
+    "color_header": "#000000",
+    "color_header_text": "#ffffff",
+    "color_announcement": "#000000",
     "color_announcement_text": "#ffffff",
     "color_footer": "#ffffff",
     "color_footer_text": "#000000",
@@ -24,13 +24,13 @@
     "color_modal_overlays": "#e6e6e6",
     "color_image_overlay": "#000000",
     "color_image_overlay_text_shadow": 20,
-    "type_header_font_family": "tenor_sans_n4",
+    "type_header_font_family": "libre_baskerville_n4",
     "type_header_spacing": "0",
     "type_header_base_size": 36,
     "type_header_line_height": 1,
     "type_header_capitalize": true,
     "type_headers_align_text": true,
-    "type_base_font_family": "twentieth_century_n4",
+    "type_base_font_family": "karla_n4",
     "type_base_spacing": "25",
     "type_base_size": 18,
     "type_base_line_height": 1.4,
@@ -57,6 +57,8 @@
     "cart_type": "drawer",
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
+    "social_facebook_link": "https:\/\/www.facebook.com\/H.S.JohnsonJewellers\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/h_s_johnson\/",
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#ffffff",
@@ -70,11 +72,12 @@
       "header": {
         "type": "header",
         "blocks": {
-          "1524770014057": {
-            "type": "logo",
+          "1524770296206": {
+            "type": "announcement",
             "settings": {
-              "desktop_logo_width": 140,
-              "mobile_logo_width": 110
+              "text": "Winter Sale",
+              "link_text": "Let set go",
+              "link": ""
             }
           },
           "1524770292306": {
@@ -85,30 +88,30 @@
               "link": ""
             }
           },
-          "1524770296206": {
-            "type": "announcement",
+          "1524770014057": {
+            "type": "logo",
             "settings": {
-              "text": "Hassle-free returns",
-              "link_text": "30-day postage paid returns",
-              "link": ""
+              "logo": "shopify:\/\/shop_images\/hs_johnson_final_logo.png",
+              "desktop_logo_width": 210,
+              "mobile_logo_width": 110
             }
           }
         },
         "block_order": [
-          "1524770014057",
+          "1524770296206",
           "1524770292306",
-          "1524770296206"
+          "1524770014057"
         ],
         "settings": {
-          "main_menu_link_list": "new-menu",
+          "main_menu_link_list": "main-menu-1",
           "mega_menu_images": true,
-          "main_menu_alignment": "center-split",
+          "main_menu_alignment": "center",
           "header_style": "sticky",
           "sticky_index": false,
           "sticky_collection": false,
           "announcement_compact": true,
-          "announcement_above_header": false,
-          "toolbar_menu": "",
+          "announcement_above_header": true,
+          "toolbar_menu": "toolbar",
           "toolbar_social": true,
           "show_locale_selector": true,
           "show_currency_selector": true,
@@ -121,16 +124,8 @@
           "1494301487049": {
             "type": "menu",
             "settings": {
-              "show_footer_title": true,
+              "show_footer_title": false,
               "menu": "footer",
-              "container_width": 25
-            }
-          },
-          "e0b49109-18d3-4166-b5b6-41ffbc2bcb39": {
-            "type": "menu",
-            "settings": {
-              "show_footer_title": true,
-              "menu": "main-menu",
               "container_width": 25
             }
           },
@@ -138,22 +133,21 @@
             "type": "newsletter",
             "settings": {
               "show_footer_title": true,
-              "title": "Join Us",
+              "title": "Sign up and save",
               "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
-              "container_width": 25
+              "container_width": 33
             }
           },
           "1494301487048": {
             "type": "logo_social",
             "settings": {
               "desktop_logo_height": 50,
-              "container_width": 25
+              "container_width": 95
             }
           }
         },
         "block_order": [
           "1494301487049",
-          "e0b49109-18d3-4166-b5b6-41ffbc2bcb39",
           "1494292487693",
           "1494301487048"
         ],

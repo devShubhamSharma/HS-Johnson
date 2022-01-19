@@ -81,6 +81,7 @@
 </style>
 
 <div data-section-id="{{ section.id }}" data-section-type="header">
+  {%comment%}
   {%- if overlay_header or section.settings.announcement_above_header -%}
     {%- render 'announcement-bar', section: section -%}
   {%- endif -%}
@@ -94,11 +95,15 @@
       -%}
     {%- endif -%}
   {%- endunless -%}
+  {%endcomment%}
 
   <div class="header-sticky-wrapper">
     <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--sticky is-light{% endif %}">
-
-      {%- if overlay_header -%}
+	 {%- if overlay_header or section.settings.announcement_above_header -%}
+    {%- render 'announcement-bar', section: section -%}
+  	{%- endif -%}
+      
+      {%- unless overlay_header -%}
         {%- if section.settings.show_locale_selector or section.settings.show_currency_selector or section.settings.toolbar_social or section.settings.toolbar_menu != blank -%}
           {%- render 'toolbar',
             section: section,
@@ -106,7 +111,8 @@
             overlay_header: overlay_header
           -%}
         {%- endif -%}
-      {%- endif -%}
+      {%- endunless -%}
+      
       <header
         id="SiteHeader"
         class="site-header{% if settings.type_navigation_style == 'heading' %} site-header--heading-style{% endif %}"
@@ -217,10 +223,11 @@
       </header>
     </div>
   </div>
-
+	{%- comment-%}
   {%- unless overlay_header or section.settings.announcement_above_header -%}
     {%- render 'announcement-bar', section: section -%}
   {%- endunless -%}
+  {%- endcomment-%}
 </div>
 
 {% schema %}

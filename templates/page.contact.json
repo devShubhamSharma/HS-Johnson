@@ -16,18 +16,30 @@
         },
         "text": {
           "type": "text",
-          "settings": {}
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>Address:<\/strong> H.S.Johnson, 8 Anson Street, Rugeley, Staffordshire. WS15 2BB.<\/p><p><strong>Email:<\/strong> <a href=\"mailto:enquiries@hsjohnson.com\">enquiries@hsjohnson.com<\/a><\/p><p>Please contact us using the form below:<\/p>"
+          }
         }
       },
       "block_order": [
         "heading",
         "text"
       ],
-      "settings": {}
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
     },
     "form": {
       "type": "contact-form",
-      "settings": {}
+      "settings": {
+        "title": "",
+        "text": "",
+        "show_phone": true,
+        "narrow_column": true
+      }
     }
   },
   "order": [

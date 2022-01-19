@@ -1,0 +1,18 @@
+.ced-header-border{
+border-top: 1px solid #666666;
+}
+
+#SiteHeader{padding:0px !important;}
+
+.hero__title{
+	font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    line-height: 50px;
+}
+
+.theme-block{
+	font-size: 40px;
+    letter-spacing: 2px;
+    color: #2d2d2d;
+}
