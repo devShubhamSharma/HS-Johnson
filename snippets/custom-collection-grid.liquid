@@ -35,6 +35,7 @@
     {%- if collection.empty? -%}
       {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
       <div class="collection-image collection-image--{{ settings.collection_grid_shape }} collection-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+    
     {%- else if collection_grid_image!=blank-%}
       <div class="collection-image collection-image--{{ settings.collection_grid_shape }} image-wrap">
         {%- assign img_url =  collection_grid_image| img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
@@ -80,8 +81,8 @@
       <span>
         {{ title_output }}
       </span>
-      <span class="ced-collection-link">{{block.settings.more_info}}</span>
+     <span class="ced-collection-link">Explore More</span>
     </span>
-	
+
   </a>
 </div>

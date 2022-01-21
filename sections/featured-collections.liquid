@@ -19,7 +19,8 @@
       {%- liquid
         assign collection = collections[block.settings.collection]
         assign background_position = block.settings.focal_point
-
+		assign collection_image = block.settings.image
+        
         case section.settings.per_row
           when 2
             assign grid_item_width = 'medium-up--one-half'
@@ -35,10 +36,12 @@
       {%- render 'collection-grid-item',
         collection: collection,
         block: block,
+    	collection_grid_image : collection_image,
         grid_item_width: grid_item_width,
         background_position: background_position,
         per_row: section.settings.per_row
       -%}
+   
     {%- endfor -%}
 
     {%- if isEmpty -%}
@@ -119,10 +122,21 @@
             "type": "collection",
             "label": "Collection"
           },
+		  {
+			"type" : "image_picker",
+			"id" : "image",
+			"label" : "Collection Image"
+		  },
           {
             "type": "text",
             "id": "title",
             "label": "Title"
+          },
+		 {
+            "type": "text",
+            "id": "more_info",
+            "label": "Info",
+			"default": "Explore Now" 
           },
           {
             "type": "select",

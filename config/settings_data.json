@@ -14,8 +14,8 @@
     "color_header_text": "#ffffff",
     "color_announcement": "#000000",
     "color_announcement_text": "#ffffff",
-    "color_footer": "#ffffff",
-    "color_footer_text": "#000000",
+    "color_footer": "#000000",
+    "color_footer_text": "#ffffff",
     "color_drawer_background": "#ffffff",
     "color_drawer_text": "#000000",
     "color_drawer_border": "#e8e8e1",
@@ -39,26 +39,30 @@
     "type_navigation_size": 16,
     "type_navigation_capitalize": true,
     "type_product_style": "body",
-    "type_collection_font": "body",
+    "type_collection_font": "heading",
     "type_collection_size": 20,
     "button_style": "square",
     "icon_weight": "2px",
     "icon_linecaps": "miter",
+    "quick_shop_enable": true,
     "quick_shop_text": "Quick view",
     "product_grid_image_size": "natural",
-    "product_hover_image": false,
-    "collection_grid_style": "overlaid-box",
-    "collection_grid_shape": "square",
-    "collection_grid_image": "product",
+    "product_hover_image": true,
+    "collection_grid_style": "overlaid",
+    "collection_grid_shape": "landscape",
+    "collection_grid_image": "collection",
     "collection_grid_text_align": "center",
     "collection_grid_tint": "#000000",
     "collection_grid_opacity": 10,
     "collection_grid_gutter": true,
     "cart_type": "drawer",
+    "cart_icon": "cart",
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "social_facebook_link": "https:\/\/www.facebook.com\/H.S.JohnsonJewellers\/",
     "social_instagram_link": "https:\/\/www.instagram.com\/h_s_johnson\/",
+    "favicon": "shopify:\/\/shop_images\/hs_johnson_final_logo.png",
+    "search_enable": true,
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#ffffff",
@@ -124,9 +128,17 @@
           "1494301487049": {
             "type": "menu",
             "settings": {
-              "show_footer_title": false,
+              "show_footer_title": true,
               "menu": "footer",
-              "container_width": 25
+              "container_width": 33
+            }
+          },
+          "d61dc084-8f95-4a76-821e-257339c0ef4d": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": true,
+              "menu": "main-menu-1",
+              "container_width": 33
             }
           },
           "1494292487693": {
@@ -137,26 +149,19 @@
               "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
               "container_width": 33
             }
-          },
-          "1494301487048": {
-            "type": "logo_social",
-            "settings": {
-              "desktop_logo_height": 50,
-              "container_width": 95
-            }
           }
         },
         "block_order": [
           "1494301487049",
-          "1494292487693",
-          "1494301487048"
+          "d61dc084-8f95-4a76-821e-257339c0ef4d",
+          "1494292487693"
         ],
         "settings": {
           "show_locale_selector": true,
           "show_currency_selector": true,
           "show_currency_flags": true,
-          "show_payment_icons": false,
-          "show_copyright": false,
+          "show_payment_icons": true,
+          "show_copyright": true,
           "copyright_text": ""
         }
       },
@@ -188,6 +193,7 @@
         "blocks": {
           "footer-promotions-0": {
             "type": "promotion",
+            "disabled": true,
             "settings": {
               "enable_image": true,
               "title": "Site-wide promotion",
@@ -198,6 +204,7 @@
           },
           "footer-promotions-1": {
             "type": "promotion",
+            "disabled": true,
             "settings": {
               "enable_image": true,
               "title": "Site-wide promotion",
@@ -208,6 +215,7 @@
           },
           "footer-promotions-2": {
             "type": "promotion",
+            "disabled": true,
             "settings": {
               "enable_image": true,
               "title": "Site-wide promotion",

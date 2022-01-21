@@ -1,0 +1,289 @@
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="shubham page-width">
+  {%- if section.settings.title != blank -%}
+  <div class="section-header">
+    <h2 class="section-header__title">{{ section.settings.title }}</h2>
+  </div>
+  {%- endif -%}
+
+  <div class="grid grid--uniform{% unless section.settings.enable_gutter %} grid--no-gutters{% endunless %}">
+    {%- liquid
+      assign isEmpty = true
+      if section.blocks.size > 0
+        assign isEmpty = false
+      endif
+    -%}
+
+    {%- for block in section.blocks -%}
+    {%- liquid
+        assign collection = collections[block.settings.collection]
+        assign background_position = block.settings.focal_point
+		assign collection_image = block.settings.image
+
+        case section.settings.per_row
+          when 2
+            assign grid_item_width = 'medium-up--one-half'
+          when 3
+            assign grid_item_width = 'small--one-half medium-up--one-third'
+          when 4
+            assign grid_item_width = 'small--one-half medium-up--one-quarter'
+          when 5
+            assign grid_item_width = 'small--one-half medium-up--one-fifth'
+        endcase
+      -%}
+
+    {%- liquid
+        unless grid_item_width
+          assign grid_item_width = 'small--one-half medium-up--one-third'
+        endunless
+
+        unless background_position
+          assign background_position = 'center center'
+        endunless
+
+        if block.settings.title != blank
+          assign title_output = block.settings.title
+        else
+          if collection.empty?
+            assign title_output = 'home_page.onboarding.collection_title' | t
+          elsif collection_title
+            assign title_output = collection_title
+          else
+            assign title_output = collection.title | escape
+          endif
+        endif
+      -%}
+
+
+    <div class="grid__item {{ grid_item_width }}">
+      <a href="{{ collection.url }}" class="collection-item collection-item--{{ settings.collection_grid_style }}" data-aos="row-of-{{ per_row }}">
+
+        {%- liquid
+      if settings.collection_grid_image == 'collection' and collection.image
+        assign collection_image = collection.image
+      else
+        assign collection_image = collection.products.first.featured_media.preview_image
+      endif
+    -%}
+
+        {%- if collection.empty? -%}
+        {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+        <div class="collection-image collection-image--{{ block.settings.collection_grid_shape }} collection-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+
+        {%- else if block.settings.image != blank-%}
+        <div class="collection-image collection-image--{{ block.settings.collection_grid_shape }} image-wrap">
+          {%- assign img_url =  block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img
+               class="lazyload"
+               src=""
+               data-src="{{ img_url }}"
+               data-aspectratio="{{ img_url.aspect_ratio }}"
+               data-widths="[360, 540, 720, 900, 1080]"
+               data-sizes="auto"
+               alt="{{ img_url.alt | escape }}"
+               style="object-position: {{ background_position }};">
+
+          <noscript>
+            <img class="lazyloaded"
+                 src="{{ collection_image | img_url: '400x' }}"
+                 alt="{{ collection_image.alt | escape }}">
+          </noscript>
+        </div>
+        {%- else -%}
+        <div class="collection-image collection-image--{{ block.settings.collection_grid_shape }} image-wrap">
+          {%- assign img_url = collection_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img
+               class="lazyload"
+               src=""
+               data-src="{{ img_url }}"
+               data-aspectratio="{{ collection_image.aspect_ratio }}"
+               data-widths="[360, 540, 720, 900, 1080]"
+               data-sizes="auto"
+               alt="{{ collection_image.alt | escape }}"
+               style="object-position: {{ background_position }};">
+
+          <noscript>
+            <img class="lazyloaded"
+                 src="{{ collection_image | img_url: '400x' }}"
+                 alt="{{ collection_image.alt | escape }}">
+          </noscript>
+        </div>
+        {%endif%}
+
+        <span
+              class="collection-item__title collection-item__title--{{ settings.collection_grid_style }} collection-item__title--{{ settings.type_collection_font }} collection-item__title--{{ settings.collection_grid_text_align }}">
+          <span>
+            {{ title_output }}
+          </span>
+          <span>{{block.settings.more}}</span>
+        </span>
+
+      </a>
+    </div>
+    {%- endfor -%}
+
+    {%- if isEmpty -%}
+    <div class="page-width">
+      <div class="grid">
+        <div class="grid__item">
+          <div class="rte">
+            {{ 'home_page.onboarding.no_content' | t }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+{
+"name": "Custom Collection list",
+"class": "index-section",
+"max_blocks": 15,
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"default": "Collection list"
+},
+{
+"type": "checkbox",
+"id": "divider",
+"label": "Show section divider",
+"default": false
+},
+{
+"type": "range",
+"id": "per_row",
+"label": "Collections per row",
+"default": 4,
+"min": 2,
+"max": 5,
+"step": 1
+},
+{
+"type": "checkbox",
+"id": "enable_gutter",
+"label": "Add spacing",
+"default": true
+}
+],
+"presets": [{
+"name": "Collection list",
+"blocks": [
+{
+"type": "collection"
+},
+{
+"type": "collection"
+},
+{
+"type": "collection"
+},
+{
+"type": "collection"
+}
+]
+}],
+"blocks": [
+{
+"type": "collection",
+"name": "Collection",
+"settings": [
+{
+"id": "collection",
+"type": "collection",
+"label": "Collection"
+},
+{
+"type" : "image_picker",
+"id" : "image",
+"label" : "Collection Image"
+},
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "more",
+"label": "More",
+"default": "Explore Now"
+},
+{
+"type": "select",
+"id": "focal_point",
+"label": "Focal point",
+"info": "Used to keep the subject of your photo in view.",
+"default": "center center",
+"options": [
+{
+"value": "20% 0",
+"label": "Top left"
+},
+{
+"value": "top center",
+"label": "Top center"
+},
+{
+"value": "80% 0",
+"label": "Top right"
+},
+{
+"value": "20% 50%",
+"label": "Left"
+},
+{
+"value": "center center",
+"label": "Center"
+},
+{
+"value": "80% 50%",
+"label": "Right"
+},
+{
+"value": "20% 100%",
+"label": "Bottom left"
+},
+{
+"value": "bottom center",
+"label": "Bottom center"
+},
+{
+"value": "80% 100%",
+"label": "Bottom right"
+}
+]
+},
+{
+        "type": "select",
+        "id": "collection_grid_shape",
+        "label": "Shape",
+        "default": "square",
+        "options": [
+          {
+            "value": "square",
+            "label": "Square (1:1)"
+          },
+          {
+            "value": "landscape",
+            "label": "Landscape (4:3)"
+          },
+          {
+            "value": "portrait",
+            "label": "Portrait (2:3)"
+          }
+        ]
+      }
+]
+}
+]
+}
+{% endschema %}
