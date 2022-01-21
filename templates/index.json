@@ -10,7 +10,7 @@
             "title": "HS JOHNSON - WATCHMAKER \nAND JEWELLER",
             "title_size": 40,
             "subheading": "HS Johnson offers a vast collection of watches and jewellery",
-            "link": "#",
+            "link": "shopify:\/\/collections\/watches",
             "link_text": "Explore More",
             "link_2": "",
             "link_text_2": "",
@@ -111,7 +111,9 @@
             "collection": "watches",
             "image": "shopify:\/\/shop_images\/watch_1_1.png",
             "title": "",
+            "more": "Explore Now",
             "focal_point": "center center",
+            "custom_collection_grid_text_align": "center",
             "collection_grid_shape": "portrait"
           }
         },
@@ -121,7 +123,9 @@
             "collection": "jewellery",
             "image": "shopify:\/\/shop_images\/jewelry_2_1.png",
             "title": "",
+            "more": "Explore Now",
             "focal_point": "center center",
+            "custom_collection_grid_text_align": "center",
             "collection_grid_shape": "portrait"
           }
         },
@@ -131,7 +135,9 @@
             "collection": "gifts",
             "image": "shopify:\/\/shop_images\/gift_1_1.png",
             "title": "",
+            "more": "Explore Now",
             "focal_point": "center center",
+            "custom_collection_grid_text_align": "center",
             "collection_grid_shape": "portrait"
           }
         }
@@ -142,7 +148,7 @@
         "1642663670cf427770-2"
       ],
       "settings": {
-        "title": "Collection list",
+        "title": "",
         "divider": false,
         "per_row": 3,
         "enable_gutter": true
@@ -185,6 +191,7 @@
         "button_label": "",
         "button_link": "",
         "image": "shopify:\/\/shop_images\/section-banner-option.png",
+        "image2": "shopify:\/\/shop_images\/mobile-sub-section-banner.png",
         "focal_point": "center",
         "layout": "left",
         "height": 550,
@@ -198,18 +205,22 @@
         "1642598959b43bc388-0": {
           "type": "collection",
           "settings": {
-            "collection": "watches",
+            "collection": "womens-watches",
             "image": "shopify:\/\/shop_images\/women_1.png",
             "title": "WATCHES",
+            "more_info": "For Her",
+            "text_color": "#000000",
             "focal_point": "center center"
           }
         },
         "1642598959b43bc388-1": {
           "type": "collection",
           "settings": {
-            "collection": "watches",
+            "collection": "mens-watches",
             "image": "shopify:\/\/shop_images\/men_1.png",
             "title": "WATCHES",
+            "more_info": "For Him",
+            "text_color": "#ffffff",
             "focal_point": "center center"
           }
         }
@@ -224,6 +235,85 @@
         "per_row": 2,
         "enable_gutter": true
       }
+    },
+    "164275176890a26cec": {
+      "type": "featured-product-list",
+      "settings": {
+        "title": "Gift Products",
+        "home_featured_products": "collectables",
+        "per_row": 4,
+        "rows": 1,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1642751870517ecd1b": {
+      "type": "featured-collections",
+      "blocks": {
+        "1642751870fbdb438a-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings",
+            "image": "shopify:\/\/shop_images\/jewel-for-her_1.png",
+            "title": "Earrings",
+            "more_info": "",
+            "text_color": "#ffffff",
+            "focal_point": "center center"
+          }
+        },
+        "1642751870fbdb438a-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets-bangles",
+            "image": "shopify:\/\/shop_images\/jewel-for-him_1.png",
+            "title": "Bracelets",
+            "more_info": "",
+            "text_color": "#ffffff",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "1642751870fbdb438a-0",
+        "1642751870fbdb438a-2"
+      ],
+      "settings": {
+        "title": "",
+        "divider": false,
+        "per_row": 2,
+        "enable_gutter": true
+      }
+    },
+    "1642753519bd31b31f": {
+      "type": "newsletter",
+      "blocks": {
+        "1642753519c3879bb5-0": {
+          "type": "title",
+          "settings": {
+            "title": "Sign up and save"
+          }
+        },
+        "1642753519c3879bb5-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>"
+          }
+        },
+        "1642753519c3879bb5-2": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "1642753519c3879bb5-0",
+        "1642753519c3879bb5-1",
+        "1642753519c3879bb5-2"
+      ],
+      "settings": {
+        "color_background": "#f4f4f4",
+        "color_text": "#1c1d1d"
+      }
     }
   },
   "order": [
@@ -232,6 +322,9 @@
     "1642663671a23ded84",
     "rich-text",
     "1642599312956733da",
-    "1642598959f2bc5eb3"
+    "1642598959f2bc5eb3",
+    "164275176890a26cec",
+    "1642751870517ecd1b",
+    "1642753519bd31b31f"
   ]
 }

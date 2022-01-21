@@ -68,15 +68,19 @@ Arguments
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
-      assign fixed_aspect_ratio = false
-      unless settings.product_grid_image_size == 'natural'
-        assign fixed_aspect_ratio = true
-      endunless
+    
+      {%assign fixed_aspect_ratio = false%}
+        {%unless settings.product_grid_image_size == 'natural'%}
+          {%assign fixed_aspect_ratio = true%}
+        {%endunless%}
 
-      assign preview_image = product.featured_media.preview_image
-      assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
-    -%}
+      {%assign preview_image = product.featured_media.preview_image%}
+      
+	  {%assign img_url = false%}
+        {%unless preview_image == blank%}
+          {%assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.'-%}
+        {%endunless%}
+    
 
     <a href="{{ product.url | within: collection }}" class="grid-product__link">
       <div class="grid-product__image-mask">
@@ -96,6 +100,7 @@ Arguments
               alt="{{ preview_image.alt | escape }}">
           </div>
         {%- else -%}
+         {%if img_url %}
           <div class="image-wrap"
             style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
             >
@@ -111,6 +116,9 @@ Arguments
                 alt="{{ preview_image.alt | escape }}">
             </noscript>
           </div>
+        {%else%}
+        {{ 'product-1' | placeholder_svg_tag }}
+        {%endif%}
         {%- endif -%}
 
         {%- if settings.product_hover_image and product.media.size > 1 -%}

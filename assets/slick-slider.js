@@ -38,7 +38,7 @@ $('.logoListSlider').slick({
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         adaptiveHeight: true,
         lazyLoad: 'ondemand',
