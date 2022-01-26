@@ -63,6 +63,10 @@
     "social_instagram_link": "https:\/\/www.instagram.com\/h_s_johnson\/",
     "favicon": "shopify:\/\/shop_images\/hs_johnson_final_logo.png",
     "search_enable": true,
+    "show_breadcrumbs": true,
+    "show_breadcrumbs_collection_link": true,
+    "text_direction": "ltr",
+    "disable_animations": false,
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#ffffff",
@@ -131,7 +135,7 @@
               "logo": "shopify:\/\/shop_images\/hs_johnson_final_logo.png",
               "description": "HS Johnson offers a vast collection of watches and jewellery from high end brands and designer labels. Established as a watchmaker back in 1946, our family business has been trading for over seventy years and the business has gone from strength to strength.",
               "desktop_logo_height": 50,
-              "container_width": 33
+              "container_width": 40
             }
           },
           "1494301487049": {
@@ -139,7 +143,7 @@
             "settings": {
               "show_footer_title": true,
               "menu": "footer",
-              "container_width": 33
+              "container_width": 30
             }
           },
           "d61dc084-8f95-4a76-821e-257339c0ef4d": {
@@ -147,7 +151,7 @@
             "settings": {
               "show_footer_title": true,
               "menu": "main-menu-1",
-              "container_width": 33
+              "container_width": 30
             }
           }
         },

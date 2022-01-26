@@ -6,6 +6,7 @@
 
 <ul class="no-bullets tag-list tag-list--active-tags">
 {%- for filter in filters -%}
+ 
   {%- assign filter_index = forloop.index -%}
 
   {%- for filter_value in filter.active_values -%}
