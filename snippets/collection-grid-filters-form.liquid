@@ -2,13 +2,26 @@
 - filters: Liquid 'collection.filters' or 'search.filters' object
 - enable_color_swatches: boolean
 - collapsed: boolean
+
+{% if collection.all_tags.size > 0 %}
+  <ul class="tag-filters">
+    {% for tag in collection.all_tags %}
+      {% if current_tags contains tag %}
+        <li class="tag-filters__item active">{{ tag | link_to_remove_tag: tag }}</li>
+      {% else %}
+        <li class="tag-filters__item">{{ tag | link_to_add_tag: tag }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
 {% endcomment %}
+
+
+
 
 <ul class="no-bullets tag-list tag-list--active-tags">
 {%- for filter in filters -%}
- 
   {%- assign filter_index = forloop.index -%}
-
   {%- for filter_value in filter.active_values -%}
   <li class="tag tag--remove">
     <a class="btn btn--small" href="{{ filter_value.url_to_remove }}">
@@ -18,6 +31,7 @@
   </li>
   {%- endfor -%}
 {%- endfor -%}
+ 
 </ul>
 
 <form class="filter-form">
@@ -163,3 +177,4 @@
   </div>
 {%- endfor -%}
 </form>
+

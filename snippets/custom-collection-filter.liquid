@@ -1,0 +1,15 @@
+{% comment %}
+- filters: Liquid 'collection.filters' or 'search.filters' object
+- enable_color_swatches: boolean
+- collapsed: boolean
+{% endcomment %}
+
+
+<ul class="no-bullets tag-list tag-list--active-tags">
+{%- for product_vendor in collection.all_vendors -%}
+  <li class="tag tag--remove">
+      {{ product_vendor | link_to_vendor }}
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg>
+  </li>
+{%- endfor -%}
+</ul>

@@ -1869,6 +1869,8 @@ lazySizesConfig.expFactor = 4;
       var isAutoHeight = container.classList.contains(classes.autoHeight);
       var parentCollapsibleEl = container.parentNode.closest(selectors.module);
       var childHeight = height;
+      
+      console.log(container);
   
       if (isTab) {
         if(isOpen) {

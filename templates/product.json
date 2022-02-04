@@ -105,15 +105,34 @@
         "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
         "button_label": "",
         "button_link": "",
+        "image": "shopify:\/\/shop_images\/alvin-mahmudov-oBT4lJvNMQg-unsplash_1_2.jpg",
+        "focal_point": "bottom",
+        "layout": "left",
+        "height": 550,
+        "framed": false,
+        "parallax": true
+      }
+    },
+    "164387016491673807": {
+      "type": "background-image-text",
+      "settings": {
+        "subtitle": "Impressive",
+        "title": "Large image with text box",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/alvin-mahmudov-oBT4lJvNMQg-unsplash.jpg",
+        "image2": "shopify:\/\/shop_images\/alvin-mahmudov-oBT4lJvNMQg-unsplash_1_2.jpg",
         "focal_point": "center",
         "layout": "left",
         "height": 550,
         "framed": false,
-        "parallax": false
+        "parallax": true
       }
     },
     "text-and-image": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image_width": 700,
         "subtitle": "",
@@ -127,23 +146,9 @@
         "divider": false
       }
     },
-    "text-and-image2": {
-      "type": "text-and-image",
-      "settings": {
-        "image_width": 700,
-        "subtitle": "",
-        "title": "About your brand",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "layout": "left",
-        "divider": false
-      }
-    },
     "testimonials": {
       "type": "testimonials",
+      "disabled": true,
       "blocks": {
         "testimonials-0": {
           "type": "testimonial",
@@ -182,8 +187,8 @@
         "title": "Testimonials",
         "align_text": "center",
         "round_images": true,
-        "color_background": "#f9f9f9",
-        "color_text": "#1c1d1d"
+        "color_background": "#000000",
+        "color_text": "#ffffff"
       }
     },
     "product-recommendations": {
@@ -191,7 +196,7 @@
       "settings": {
         "show_product_recommendations": true,
         "product_recommendations_heading": "You may also like",
-        "related_count": 5
+        "related_count": 6
       }
     },
     "recently-viewed": {
@@ -209,8 +214,8 @@
     "main",
     "sub",
     "background-image-text",
+    "164387016491673807",
     "text-and-image",
-    "text-and-image2",
     "testimonials",
     "product-recommendations",
     "recently-viewed",
