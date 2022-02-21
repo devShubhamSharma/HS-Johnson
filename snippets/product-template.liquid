@@ -98,12 +98,13 @@
                 {{ 'home_page.onboarding.product_title' | t }}
                 {%- endunless -%}
               </h1>
+             
               {%- endif -%}
 
               {%- if sku_enable -%}
               <p data-sku class="product-single__sku">
                 {%- if current_variant.sku -%}
-                {{ current_variant.sku }}
+                Code: {{ current_variant.sku }}
                 {%- endif -%}
               </p>
               {%- endif -%}
@@ -199,7 +200,9 @@
                 </div>
                 {%- endif -%}
               </div>
+              {% comment %}
               {%- when 'quantity_selector' -%}
+              {% endcomment %}
               <div class="product-block" {{ block.shopify_attributes }}>
                 <div class="product__quantity">
                   {% assign qty_id = section_id | append: product.id %}

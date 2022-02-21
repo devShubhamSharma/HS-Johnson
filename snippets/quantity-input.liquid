@@ -6,7 +6,7 @@
     aria-label="quantity"
     pattern="[0-9]*"
     form="{{ form_id }}"
-    name="quantity">
+    name="quantity"  onkeypress="return isNumberKey(event);">
   <button type="button"
     class="js-qty__adjust js-qty__adjust--minus"
     aria-label="{{ 'cart.general.reduce_quantity' | t }}">
@@ -20,3 +20,11 @@
       <span class="icon__fallback-text" aria-hidden="true">+</span>
   </button>
 </div>
+<script>
+  
+   function isNumberKey(evt){
+    
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+</script>

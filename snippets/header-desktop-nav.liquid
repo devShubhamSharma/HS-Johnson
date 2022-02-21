@@ -32,13 +32,15 @@
         {{ link.title }}
       </a>
       {%- if is_megamenu -%}
+
         {%- assign previous_column_type = '' -%}
         {%- assign animation_column = 1 -%}
 
         <div class="site-nav__dropdown megamenu text-left">
           <div class="page-width">
             <div class="grid{% if dropdown_alignment == 'center' %} grid--center{% endif %}">
-              <div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
+              <div class="ced-brand-mega-menu-grid grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
+               
                 {%- assign animation_column = animation_column | plus: 1 -%}
 
                 {%- for childlink in link.links -%}
@@ -53,9 +55,10 @@
                       assign create_new_column = true
                     endif
                   -%}
+					
 
                   {%- if create_new_column -%}
-                    </div><div class="grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
+                    </div><div class="ced-brand-mega-menu-grid grid__item medium-up--one-fifth appear-animation appear-delay-{{ animation_column }}">
                     {%- assign animation_column = animation_column | plus: 1 -%}
                   {%- endif -%}
 
@@ -74,11 +77,11 @@
                         style="background-image: url({{ collections[subcollection_handle].image | img_url: '400x' }})"></a>
                     {%- endif -%}
                   {%- endif -%}
-
-                  <div class="h5">
+					 <div class="h5 ced-brand-mega-menu-heading">
                     <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--top-level">{{ childlink.title }}</a>
                   </div>
-
+                <div class="ced-brand-mega-menu">
+                  
                   {%- liquid
                     if childlink.levels > 0
                       assign previous_column_type = 'full'
@@ -95,6 +98,7 @@
                     </div>
                   {%- endfor -%}
                 {%- endfor -%}
+              </div>
               </div>
             </div>
           </div>

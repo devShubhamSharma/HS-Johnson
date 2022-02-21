@@ -23,6 +23,9 @@
         {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         {%- assign img_url2 = section.settings.image2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <img
+          loading="lazy"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
           class="image-fit background-media-text__image background-media-text__image--{{ section.id }} lazyload"
           src=""
           data-src="{{ img_url }}"
@@ -35,6 +38,9 @@
           
         <noscript>
           <img
+            loading="lazy"
+            width="{{ image.width }}"
+            height="{{ image.height }}"
             class="image-fit background-media-text__image background-media-text__image--{{ section.id }} lazyloaded"
             src="{{ section.settings.image | img_url: '1800x' }}"
             alt="{{ section.settings.image.alt }}">
@@ -50,6 +56,9 @@
   </div>
   <div class="mobile_image background-media-text__container">
   	<img
+          loading="lazy"
+          width="{{ image.width }}"
+          height="{{ image.height }}"
           class="image-fit background-media-text__image background-media-text__image--{{ section.id }} lazyload"
           src=""
           data-src="{{ img_url2 }}"
@@ -106,6 +115,14 @@
   $(window).resize(function(){
   	image();
   });
+  const image_redirection_link = $(".background-media-text__container");
+  image_redirection_link.on("click", imageRediect.bind());
+  image_redirection_link.hover(function(){
+    image_redirection_link.css("cursor","pointer");
+  });
+  function imageRediect(){
+    location.href = "{{ section.settings.redirect_url }}";
+  }
 </script>
 
 {% schema %}
@@ -144,12 +161,17 @@
       {
         "type": "image_picker",
         "id": "image",
-        "label": "Image"
+        "label": "Desktop Image"
       },
 	  {
         "type": "image_picker",
         "id": "image2",
-        "label": "Image2"
+        "label": "Mobile Image"
+      },
+      {
+        "type": "url",
+        "id" : "redirect_url",
+        "label" : "Image link"
       },
       {
         "type": "select",

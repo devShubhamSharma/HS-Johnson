@@ -37,9 +37,12 @@
       <div class="collection-image collection-image--{{ settings.collection_grid_shape }} collection-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
     {%- else if collection_grid_image!=blank-%}
       <div class="collection-image collection-image--{{ settings.collection_grid_shape }} image-wrap">
-        {%- assign img_url =  collection_grid_image| img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {%- assign img_url =  collection_image| img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <img
           class="lazyload"
+          loading="lazy"
+          height="{{ image.height }}"
+          width="{{ image.width }}"
           src=""
           data-src="{{ img_url }}"
           data-aspectratio="{{ collection_image.aspect_ratio }}"
@@ -50,6 +53,9 @@
 
         <noscript>
           <img class="lazyloaded"
+            loading="lazy"
+            height="{{ image.height }}"
+            width="{{ image.width }}"
             src="{{ collection_image | img_url: '400x' }}"
             alt="{{ collection_image.alt | escape }}">
         </noscript>
@@ -58,6 +64,9 @@
     <div class="collection-image collection-image--{{ settings.collection_grid_shape }} image-wrap">
         {%- assign img_url = collection_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <img
+          loading="lazy"
+          height="{{ image.height }}"
+          width="{{ image.width }}"
           class="lazyload"
           src=""
           data-src="{{ img_url }}"
@@ -69,8 +78,12 @@
 
         <noscript>
           <img class="lazyloaded"
+            loading="lazy"
+            height="{{ image.height }}"
+            width="{{ image.width }}"
             src="{{ collection_image | img_url: '400x' }}"
-            alt="{{ collection_image.alt | escape }}">
+            alt="{{ collection_image.alt | escape }}"
+          >
         </noscript>
       </div>
     {%endif%}

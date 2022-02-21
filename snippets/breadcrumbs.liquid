@@ -18,8 +18,6 @@
           {{ collection.title | link_to: url }}
         {% endif %}
       {% endif %}
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-
     {% elsif template.name == 'collection' and collection.handle %}
       {% if settings.show_breadcrumbs_collection_link %}
         <span class="breadcrumb__divider" aria-hidden="true">/</span>
@@ -71,9 +69,7 @@
 
     {% elsif template.name == 'search' %}
 
-      <span class="breadcrumb__divider" aria-hidden="true">/</span>
-      <span>{{ page_title | replace: '*', '' }}</span>
-
+      <span class="breadcrumb__divider" aria-hidden="true"></span>
     {% else %}
 
       <span class="breadcrumb__divider" aria-hidden="true">/</span>

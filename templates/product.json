@@ -19,11 +19,11 @@
             "color_swatches": false
           }
         },
-        "sales_point": {
+        "220b8fec-d03e-4af8-aba9-a15217cc72b0": {
           "type": "sales_point",
           "settings": {
             "icon": "globe",
-            "text": "Free worldwide shipping"
+            "text": "FREE UK DELIVERY AND WORLDWIDE SHIPPING AVAILABLE"
           }
         },
         "inventory_status": {
@@ -46,21 +46,6 @@
             "is_tab": false
           }
         },
-        "tab": {
-          "type": "tab",
-          "settings": {
-            "title": "Shipping information",
-            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<\/p><p>Ex: Shipping and return policies, size guides, and other common questions.<\/p>",
-            "page": ""
-          }
-        },
-        "contact": {
-          "type": "contact",
-          "settings": {
-            "title": "Ask a question",
-            "phone": false
-          }
-        },
         "share": {
           "type": "share",
           "settings": {}
@@ -70,16 +55,14 @@
         "price",
         "separator",
         "variant_picker",
-        "sales_point",
+        "220b8fec-d03e-4af8-aba9-a15217cc72b0",
         "inventory_status",
         "buy_buttons",
         "description",
-        "tab",
-        "contact",
         "share"
       ],
       "settings": {
-        "sku_enable": false,
+        "sku_enable": true,
         "image_position": "right",
         "image_size": "medium",
         "product_zoom_enable": true,
@@ -97,24 +80,9 @@
         "max_width": true
       }
     },
-    "background-image-text": {
-      "type": "background-image-text",
-      "settings": {
-        "subtitle": "Impressive",
-        "title": "About your brand",
-        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
-        "button_label": "",
-        "button_link": "",
-        "image": "shopify:\/\/shop_images\/alvin-mahmudov-oBT4lJvNMQg-unsplash_1_2.jpg",
-        "focal_point": "bottom",
-        "layout": "left",
-        "height": 550,
-        "framed": false,
-        "parallax": true
-      }
-    },
     "164387016491673807": {
       "type": "background-image-text",
+      "disabled": true,
       "settings": {
         "subtitle": "Impressive",
         "title": "Large image with text box",
@@ -208,17 +176,33 @@
     "collection-return": {
       "type": "collection-return",
       "settings": {}
+    },
+    "1644832600129e0c5c": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_width": 700,
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "layout": "right",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "sub",
-    "background-image-text",
     "164387016491673807",
     "text-and-image",
     "testimonials",
     "product-recommendations",
     "recently-viewed",
-    "collection-return"
+    "collection-return",
+    "1644832600129e0c5c"
   ]
 }

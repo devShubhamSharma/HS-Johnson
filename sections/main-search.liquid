@@ -22,7 +22,6 @@
       </div>
 
       {%- if search.results_count != 0 -%}
-
         {%- assign paginate_by = section.settings.per_row | times: section.settings.rows_per_page -%}
         {%- paginate search.results by paginate_by -%}
 

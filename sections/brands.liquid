@@ -1,0 +1,69 @@
+<div class="custom-brand-wrapper">
+  <h3>Shop By Manufacturer</h3>
+		<div class="custom-brands">
+			<ul class="brand-list-wrapper">
+            {% assign letters = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z" | split: ' ' %}
+            {% for i in letters %}   
+              <li class="brand-list" >
+                <a href="#brand-{{i}}" id="{{ i }}">{{ i }}</a>
+              </li>
+			{% endfor %}
+			</ul>
+		</div>
+
+		<div class="custom-brand-name-wrapper" >
+          {% for letter in letters %} 
+			<div class="custom-brand-name" id="brand-{{ letter }}">
+				<span class="brand-name-tag">{{ letter }}</span>
+				<ul class="brand-name-list-wrapper">
+                   {% for collection in collections %}
+                   {% assign str=collection.title | split:"" %}
+					{% if str[0] == letter %}
+                        <li class="brand-name-list">
+                          <a href="{{ collection.url }}">{{ str }}</a>
+                        </li>
+                    {% endif %}
+                   {% endfor %}
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+<style>
+  .ced-disabled
+  {
+    pointer-events: none;
+  	cursor: default;
+  }
+</style>
+<script>
+  $(document).ready(function(){
+    var id=0,text;
+    $("ul").each(function(){
+      var len=$(this).children().length;
+      if(len==0)
+      {
+        id=$(this).siblings('span').text();
+        $(`#${id}`).attr('src','#');
+        $(`#${id}`).html(`<del>${id}</del>`);
+        $(`#${id}`).addClass('ced-disabled');
+        $(this).parents('.custom-brand-name').hide(); 
+      }
+    });
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+			{
+			"type":"product",
+			"label":"product",
+			"id":"product"	
+			}
+		]
+  }
+{% endschema %}
+
+

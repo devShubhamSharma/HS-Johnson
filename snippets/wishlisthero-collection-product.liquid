@@ -10,9 +10,12 @@
 {% unless buttonClass %}
    {% assign buttonClass = 'wishlisthero-floating' %}
 {% endunless  %}
+
 {% assign image = product.featured_image %}
 {% assign name = product.title %}
+
 {% capture url %}https://{{shop.domain}}{{product.url}}{% endcapture %}
+
 {% for var in product.variants %}
     {% if product.selected_or_first_available_variant.id == var.id %}
         {% if var.image and var.image.src %}
@@ -26,6 +29,7 @@
         {% endif %}
     {% endif %}
 {% endfor %}
+
 <div data-wlh-id="{{product.id}}" 
  data-wlh-link="{{url}}"
 data-wlh-variantid="{{product.selected_or_first_available_variant.id}}" 
@@ -35,3 +39,4 @@ data-wlh-variantid="{{product.selected_or_first_available_variant.id}}"
  data-wlh-view="{{buttonView}}" 
  class="wishlist-hero-custom-button {{buttonClass}}" 
  data-wlh-mode="{{buttonMode}}"></div>
+

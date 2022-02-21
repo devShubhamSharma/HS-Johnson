@@ -133,3 +133,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if(e.target.value == '') setTimeout( aw.start, 500);
   });
 });
+
+
+//remove-spacing in home page in instagram app
+
+$( ".shopify-app-block" ).parent().css( "margin", "0px" );
+
+/* ---- Brands A to Z ---- */
+
+		$(function (){
+			$('.brand-list a').on('click', function(e){
+				e.preventDefault();
+				$('.brand-list a').removeClass('active');
+				$(this).addClass('active');
+				var attrval = $(this.getAttribute('href'));
+				$('html,body').stop().animate({
+					scrollTop: attrval.offset().top-80
+				}, 300)
+			});
+		});

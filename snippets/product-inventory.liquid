@@ -23,6 +23,7 @@
       <span data-product-inventory data-threshold="{{ block.settings.inventory_threshold }}">
         {%- if inventory_visible -%}
           {{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}
+        
         {%- else -%}
           {{ 'products.product.in_stock_label' | t }}
         {%- endif -%}

@@ -14,10 +14,17 @@
   <link rel="dns-prefetch" href="https://ajax.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.gstatic.com">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  {%-comment-%}
+  -----------------------------------------------------------------------------------------------------------
+  JQUERY CDN LINK
+  -----------------------------------------------------------------------------------------------------------
+  {%-endcomment-%}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" async></script>
+  
   {%- if settings.favicon != blank -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
   {%- endif -%}
 
   {%- render 'seo-title' -%}
@@ -32,7 +39,7 @@
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {%- render 'css-variables' -%}
   {{ 'custom.css' | asset_url | stylesheet_tag }}
-  
+
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 
@@ -81,22 +88,30 @@
   <script src="{{ 'vendor-scripts-v10.js' | asset_url | split: '?' | first }}" defer="defer"></script>
 
   {%- if shop.enabled_currencies.size > 1 -%}
-    <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
+  <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url | split: '?' | first }}">
   {%- endif -%}
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'slick-slider.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'validation.js' | asset_url }}" defer="defer"></script>
 
   {%- if request.page_type contains 'customers/' -%}
-    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
   {%- endif -%}
-{% render 'wishlisthero-styles.liquid' %}
+
+  {%-comment-%}
+  -----------------------------------------------------------------------------------------------------------
+  SLICK SLIDER LIBRARY CSS AND JS FILE AND WISHLIST SECTION 
+  -----------------------------------------------------------------------------------------------------------
+  {%-endcomment-%}
+
+  {% render 'wishlisthero-styles.liquid' %}
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  </head>
-  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" async></script>
+</head>
+
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{ settings.type_body_align_text }}" data-button_style="{{ settings.button_style }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_headers_align_text="{{ settings.type_headers_align_text }}" data-type_product_capitalize="{{ settings.type_product_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
 
@@ -104,21 +119,15 @@
 
   <div id="PageContainer" class="page-container">
     <div class="transition-body">
-
-    {%- section 'header' -%}
-
+      {%- section 'header' -%}
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
       </main>
-
       {%- section 'footer-promotions' -%}
       {%- section 'footer' -%}
-
     </div>
   </div>
-
   {%- section 'newsletter-popup' -%}
-
   {%- liquid
     render 'video-modal'
     render 'photoswipe-template'

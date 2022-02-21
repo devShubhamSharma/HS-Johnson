@@ -17,13 +17,34 @@
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-left",
             "image": "shopify:\/\/shop_images\/banner1.png",
+            "image_mobile": "shopify:\/\/shop_images\/mobile-banner1.png",
             "overlay_opacity": 0,
             "focal_point": "80% 0"
+          }
+        },
+        "ca4c5f17-5598-4442-b861-42757cb45998": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/offer-banner.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/mobile-offer.png",
+            "overlay_opacity": 0,
+            "focal_point": "center center"
           }
         }
       },
       "block_order": [
-        "slideshow-0"
+        "slideshow-0",
+        "ca4c5f17-5598-4442-b861-42757cb45998"
       ],
       "settings": {
         "section_height": "natural",
@@ -154,34 +175,6 @@
         "enable_gutter": true
       }
     },
-    "rich-text": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "HS JOHNSON Collection"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>We are happy to introduce the new HS JOHNSON Collection. These are three quartz models designed with simplicity and elegance kept in mind. They come in different sizes and colors, and all feature a stainless steel back — leaving enough space for a personalized engraving. The engraving service is complimentary with any watch from the HS JOHNSON series.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "divider": false
-      }
-    },
     "1642599312956733da": {
       "type": "background-image-text",
       "settings": {
@@ -192,6 +185,7 @@
         "button_link": "",
         "image": "shopify:\/\/shop_images\/section-banner-option.png",
         "image2": "shopify:\/\/shop_images\/mobile-sub-section-banner.png",
+        "redirect_url": "shopify:\/\/collections\/collectables",
         "focal_point": "center",
         "layout": "left",
         "height": 550,
@@ -285,6 +279,27 @@
         "enable_gutter": true
       }
     },
+    "1644300798226db07a": {
+      "type": "apps",
+      "blocks": {
+        "307b9d2a-b14b-41c5-b11a-6c1ff1a21688": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "heading_font": "helvetica_n4",
+            "heading_size": 20,
+            "feed_width": 100,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "307b9d2a-b14b-41c5-b11a-6c1ff1a21688"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": true
+      }
+    },
     "1642753519bd31b31f": {
       "type": "newsletter",
       "blocks": {
@@ -320,11 +335,11 @@
     "slideshow",
     "1642596310a3684820",
     "1642663671a23ded84",
-    "rich-text",
     "1642599312956733da",
     "1642598959f2bc5eb3",
     "164275176890a26cec",
     "1642751870517ecd1b",
+    "1644300798226db07a",
     "1642753519bd31b31f"
   ]
 }

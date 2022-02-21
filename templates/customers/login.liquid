@@ -14,6 +14,7 @@
 
       <label for="CustomerEmail">{{ 'customer.login.email' | t }}</label>
       <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" autocorrect="off" autocapitalize="off" autofocus>
+	  <p class="custom" style="color:red;display:none">Email cannot be empty</p>
 
       {%- if form.password_needed -%}
         <div class="grid">
@@ -29,7 +30,9 @@
           </div>
         </div>
         <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
-      {%- endif -%}
+     	<p class="custom1" style="color:red;display:none">Password cannot be empty</p>
+             
+    {%- endif -%}
 
       <p>
         <button type="submit" class="btn btn--full">
@@ -55,10 +58,11 @@
         {%- endif -%}
 
         <label for="RecoverEmail">{{ 'customer.recover_password.email' | t }}</label>
-        <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
-
+        <input type="email" value="" name="email" id="recover-email" class="input-full" autocorrect="off" autocapitalize="off">
+		   <p class="for-custom" style="color:red;display:none">Email cannot be empty</p>
+       
         <p>
-          <button type="submit" class="btn">
+          <button type="submit" class="custom-btn btn" disabled>
             {{ 'customer.recover_password.submit' | t }}
           </button>
         </p>
