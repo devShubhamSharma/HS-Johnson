@@ -33,14 +33,14 @@
         endcase
       -%}
 
-      {%- render 'collection-grid-item',
+    {%- render 'collection-grid-item',
         collection: collection,
         block: block,
-    	collection_grid_image : collection_image,
+        collection_grid_image : collection_image,
         grid_item_width: grid_item_width,
         background_position: background_position,
         per_row: section.settings.per_row
-      -%}
+    -%}
    
     {%- endfor -%}
 

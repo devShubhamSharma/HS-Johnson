@@ -760,3 +760,35 @@ border: 0px solid #efefef;}
   padding-right:10px;
   margin-right:15px;
   border-right:1px solid #a8a8a8;}
+  
+  
+/*   collection-list-page */
+  
+  .template-list-collections .collection-item{
+    border:2px solid #efefef;
+    padding: 20px;}
+  
+  .template-list-collections .collection-item:hover{
+    border:2px solid #000;}
+  
+  .template-list-collections .collection-item__title--top-left{
+  	top: unset!important;
+    left: 0px!important;
+    background: #fff;
+    padding: 10px 0px;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    border-top: 2px solid #efefef;
+  }
+  
+  @media only screen and (max-width: 900px) {
+  
+    .template-list-collections .collection-item .collection-item__title{
+    font-size:14px;
+    }
+  }
+  
