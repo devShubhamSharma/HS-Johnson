@@ -77,10 +77,10 @@ Snippet Arguments
           quick_shop_enable: quick_shop_enable
         -%}
       {%- else -%}
-        {%- render 'search-grid-item',
+        {% comment %} {%- render 'search-grid-item',
           item: item,
           per_row: per_row
-        %}
+        %} {% endcomment %}
       {%- endif -%}
     {%- endfor -%}
   </div>
