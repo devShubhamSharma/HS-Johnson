@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('#CustomerEmail').on('keyup', function() {
         var email = $(this).val();
@@ -26,7 +25,7 @@ $(document).ready(function() {
                 $('button').attr('disabled', true);
             } else {
                 $('.custom1').hide();
-                //             $('.custom_login ').hide();
+                //$('.custom_login ').hide();
                 $('button').attr('disabled', false);
             }
         } else {

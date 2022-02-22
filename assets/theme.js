@@ -6418,6 +6418,7 @@ lazySizesConfig.expFactor = 4;
         var url = this.container.getAttribute('data-product-url');
         var aspectRatio = this.container.getAttribute('data-aspect-ratio');
         var featuredImage = this.container.getAttribute('data-img-url');
+        
   
         // Remove current product if already in set of recent
         if (theme.recentlyViewed.recent.hasOwnProperty(handle)) {
@@ -7347,6 +7348,8 @@ lazySizesConfig.expFactor = 4;
       this.namespace = '.recently-viewed' + this.sectionId;
       this.gridItemWidth = this.container.getAttribute('data-grid-item-class');
       this.rowOf = this.container.getAttribute('data-row-of');
+      // var btn = document.querySelector('.quick-product__btn');
+      // theme.preloadProductModal(handle, productId, btn);
   
       theme.initWhenVisible({
         element: this.container,

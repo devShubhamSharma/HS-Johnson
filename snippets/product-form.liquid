@@ -11,6 +11,10 @@
     <div class="payment-buttons">
   {%- endif -%}
 
+  <div class="dynamic_button--firefox" style="display:none">
+    {{ form | payment_button }}
+  </div>
+  
     {%- liquid
       assign default_text = 'products.product.add_to_cart' | t
       assign button_text = 'products.product.add_to_cart' | t
@@ -22,7 +26,7 @@
         assign button_text = 'products.product.sold_out' | t
       endunless
     -%}
-
+  
     <button
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
@@ -33,11 +37,9 @@
         {{ button_text }}
       </span>
     </button>
-
     {%- if enable_dynamic_buttons -%}
       {{ form | payment_button }}
     {%- endif -%}
-
   {%- if enable_dynamic_buttons -%}
     </div>
   {%- endif -%}
@@ -69,3 +71,11 @@
     </textarea>
   {%- endif -%}
 {%- endform -%}
+
+<script>
+  const paymentEle = $(".dynamic_button--firefox");
+  const firefoxBrowser = navigator.userAgent.search('Firfox');
+  if(firefoxBrowser == -1){
+    paymentEle.style.display = "block";
+  }
+</script>
